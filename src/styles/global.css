@@ -414,7 +414,8 @@ main { width: 100%; max-width: 100%; overflow-x: clip; }
 .about-body h2 { font-size: clamp(3.5rem, 5.4vw, 6rem); line-height: 1.02; }
 .inline-image { display: inline-block; width: .95em; height: .48em; margin: 0 .08em; border-radius: 100px; vertical-align: .05em; background: url("/images/workspace-hero.png") center 59% / cover; filter: saturate(.65); }
 .about-body > p { max-width: 720px; font-size: 1.25rem; line-height: 1.72; }
-.tech-list li { border-radius: 100px; padding: 10px 17px; background: #ecf0e9; }
+.tech-list li { display: inline-flex; align-items: center; gap: 8px; border-radius: 100px; padding: 10px 17px; background: #ecf0e9; }
+.tech-list li img { display: block; width: 18px; height: 18px; object-fit: contain; }
 .projects-section { position: relative; min-height: 790px; padding-block: 150px 160px; background: radial-gradient(circle at 15% 25%, #24443a, #132721 60%); }
 .projects-heading { position: relative; z-index: 2; width: 29%; display: block; margin: 24px 0 0; }
 .projects-heading h2 { font-family: "Cabinet Grotesk", "Outfit", sans-serif; font-size: clamp(4rem, 5.8vw, 6rem); font-weight: 600; letter-spacing: -.07em; }

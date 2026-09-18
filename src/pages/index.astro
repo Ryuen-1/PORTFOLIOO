@@ -1,7 +1,21 @@
 ---
 import "../styles/global.css";
 
-const technologies = ["MERN", "TypeScript", "Laravel", "PHP", "Python", "MongoDB", "XGBoost", "Git", "C", "Java"];
+const technologies = [
+  { name: "MERN" },
+  { name: "TypeScript" },
+  { name: "Laravel" },
+  { name: "PHP" },
+  { name: "Python" },
+  { name: "MongoDB" },
+  { name: "XGBoost" },
+  { name: "Git" },
+  { name: "C" },
+  { name: "Java" },
+  { name: "Vercel", icon: "/images/technologies/vercel.svg" },
+  { name: "Supabase", icon: "/images/technologies/supabase.svg" },
+  { name: "Astro", icon: "/images/technologies/astro.svg" }
+];
 const projects = [
   { name: "Class Scheduling (BukSU)", category: "mern", technologies: ["MERN"], repository: "https://github.com/Ryuen-1/Class-Scheduling" },
   { name: "ChoreChecker", category: "typescript", technologies: ["TypeScript"], repository: "https://github.com/Ryuen-1/ChoreCheck" },
@@ -125,7 +139,12 @@ const certificates = [
           <div class="tech-block">
             <h3>Technologies I work with</h3>
             <ul class="tech-list" aria-label="Technologies I work with">
-              {technologies.map((technology) => <li>{technology}</li>)}
+              {technologies.map((technology) => (
+                <li>
+                  {technology.icon && <img src={technology.icon} alt="" width="18" height="18" loading="lazy" />}
+                  <span>{technology.name}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
