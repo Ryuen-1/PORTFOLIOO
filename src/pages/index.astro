@@ -2,19 +2,19 @@
 import "../styles/global.css";
 
 const technologies = [
-  { name: "MERN" },
-  { name: "TypeScript" },
-  { name: "Laravel" },
-  { name: "PHP" },
-  { name: "Python" },
-  { name: "MongoDB" },
-  { name: "XGBoost" },
-  { name: "Git" },
-  { name: "C" },
-  { name: "Java" },
-  { name: "Vercel", icon: "/images/technologies/vercel.svg" },
-  { name: "Supabase", icon: "/images/technologies/supabase.svg" },
-  { name: "Astro", icon: "/images/technologies/astro.svg" }
+  { name: "MERN", icons: ["mongodb.svg", "express.svg", "react.svg", "nodejs.svg"] },
+  { name: "TypeScript", icons: ["typescript.svg"] },
+  { name: "Laravel", icons: ["laravel.svg"] },
+  { name: "PHP", icons: ["php.svg"] },
+  { name: "Python", icons: ["python.svg"] },
+  { name: "MongoDB", icons: ["mongodb.svg"] },
+  { name: "XGBoost", icons: ["xgboost.png"] },
+  { name: "Git", icons: ["git.svg"] },
+  { name: "C", icons: ["c.svg"] },
+  { name: "Java", icons: ["java.svg"] },
+  { name: "Vercel", icons: ["vercel.svg"] },
+  { name: "Supabase", icons: ["supabase.svg"] },
+  { name: "Astro", icons: ["astro.svg"] }
 ];
 const projects = [
   { name: "Class Scheduling (BukSU)", category: "mern", technologies: ["MERN"], repository: "https://github.com/Ryuen-1/Class-Scheduling" },
@@ -141,7 +141,9 @@ const certificates = [
             <ul class="tech-list" aria-label="Technologies I work with">
               {technologies.map((technology) => (
                 <li>
-                  {technology.icon && <img src={technology.icon} alt="" width="18" height="18" loading="lazy" />}
+                  <span class:list={["tech-icons", { "tech-icons--group": technology.icons.length > 1 }]} aria-hidden="true">
+                    {technology.icons.map((icon) => <img src={`/images/technologies/${icon}`} alt="" width="18" height="18" loading="lazy" />)}
+                  </span>
                   <span>{technology.name}</span>
                 </li>
               ))}
