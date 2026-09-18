@@ -253,15 +253,21 @@ const certificates = [
 
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="page-width contact-inner reveal">
-          <div>
+          <div class="contact-intro">
             <p class="contact-kicker">Have something in mind?</p>
-            <h2 id="contact-title">Let's make<br />something <em>work.</em></h2>
+            <h2 id="contact-title">Let's make<br /><span class="contact-heading-line">something <em>work.</em></span></h2>
             <p class="contact-name">Ian Carlo B. Quimbo</p>
           </div>
           <div class="contact-details">
-            <a class="contact-email" href="mailto:ian.quimbo2004@gmail.com">ian.quimbo2004@gmail.com <span aria-hidden="true">↗</span></a>
-            <a class="contact-phone" href="tel:+639161453803">+63 916 145 3803 <span aria-hidden="true">↗</span></a>
-            <button class="copy-button" type="button" id="copy-email">Copy email address</button>
+            <a class="contact-link contact-email" href="mailto:ian.quimbo2004@gmail.com">
+              <span class="contact-link-copy"><span class="contact-link-label">Email</span><span class="contact-link-value">ian.quimbo2004@gmail.com</span></span>
+              <span class="contact-link-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-link contact-phone" href="tel:+639161453803">
+              <span class="contact-link-copy"><span class="contact-link-label">Phone</span><span class="contact-link-value">+63 916 145 3803</span></span>
+              <span class="contact-link-arrow" aria-hidden="true">↗</span>
+            </a>
+            <button class="copy-button" type="button" id="copy-email"><svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><rect x="6" y="6" width="10" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5" /><path d="M13 6V4.5A1.5 1.5 0 0 0 11.5 3h-7A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13H6" stroke="currentColor" stroke-width="1.5" /></svg>Copy email address</button>
             <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
           </div>
         </div>
@@ -409,6 +415,10 @@ const certificates = [
             scrollTrigger: { trigger: card, start: "top 96%", end: "top 63%", scrub: 1 }
           });
           card.style.zIndex = String(index + 1);
+        });
+        gsap.fromTo(".contact-link, .copy-button", { y: 24, opacity: 0 }, {
+          y: 0, opacity: 1, stagger: 0.1, ease: "none",
+          scrollTrigger: { trigger: ".contact-section", start: "top 82%", end: "top 42%", scrub: 1 }
         });
       }
     </script>
