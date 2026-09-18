@@ -1,0 +1,394 @@
+---
+import "../styles/global.css";
+
+const technologies = ["MERN", "TypeScript", "Laravel", "PHP", "Python", "MongoDB", "XGBoost"];
+const projects = [
+  { name: "Class Scheduling (BukSU)", category: "mern", technologies: ["MERN"], repository: "https://github.com/Ryuen-1/Class-Scheduling" },
+  { name: "ChoreChecker", category: "typescript", technologies: ["TypeScript"], repository: "https://github.com/Ryuen-1/ChoreCheck" },
+  { name: "Queueless", category: "laravel", technologies: ["Laravel", "PHP"], repository: "https://github.com/Ryuen-1/Wbsys" },
+  { name: "Academic Early Warning System", category: "python", technologies: ["Python", "MongoDB", "XGBoost", "AI"], repository: "https://github.com/Ryuen-1/AEWS---FINAL" }
+];
+const filters = [
+  { label: "All work", value: "all" },
+  { label: "MERN", value: "mern" },
+  { label: "TypeScript", value: "typescript" },
+  { label: "Laravel", value: "laravel" },
+  { label: "Python / AI", value: "python" }
+];
+
+const certificates = [
+  {
+    title: "Introduction to AI Literacy and Responsible Use",
+    detail: "Micro-credentials course",
+    issuer: "Mapua University / ACHIEVE",
+    date: "14 Sep 2026",
+    kind: "course",
+    type: "Course completion",
+    image: "/images/certificates/ai-literacy.png",
+    pdf: "/certificates/ai-literacy-responsible-use.pdf"
+  },
+  {
+    title: "CCNA: Switching, Routing, and Wireless Essentials",
+    detail: "Cisco Networking Academy program",
+    issuer: "Cisco Networking Academy / Bukidnon State University",
+    date: "23 Dec 2025",
+    kind: "course",
+    type: "Course completion",
+    image: "/images/certificates/ccna.png",
+    pdf: "/certificates/ccna-switching-routing-wireless-essentials.pdf"
+  },
+  {
+    title: "DIGIMO 2025",
+    detail: "Digital Malaybalay City - Innovating Together: From Local Strengths to Global Impact",
+    issuer: "Bukidnon State University, Malaybalay City",
+    date: "29-31 Oct 2025",
+    kind: "event",
+    type: "Event document",
+    image: "/images/certificates/digimo.png",
+    pdf: "/certificates/digimo-2025.pdf"
+  },
+  {
+    title: "IVEDIIC Lunch Date: Pitch Like a Pro",
+    detail: "Online participation via Google Meet",
+    issuer: "Universiti Teknologi MARA (UiTM)",
+    date: "24 Sep 2025",
+    kind: "event",
+    type: "Participation",
+    image: "/images/certificates/pitch-like-a-pro.png",
+    pdf: "/certificates/pitch-like-a-pro.pdf"
+  },
+  {
+    title: "Virtual International Lecture Series 2025",
+    detail: "AI in Technologies: Innovations and Applications Across Industries",
+    issuer: "Bukidnon State University",
+    date: "25-28 Mar 2025",
+    kind: "event",
+    type: "Participation",
+    image: "/images/certificates/lecture-series.png",
+    pdf: "/certificates/virtual-international-lecture-series-2025.pdf"
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f5f1" />
+    <meta name="description" content="Explore the projects of Ian Carlo B. Quimbo, a 4th Year BSIT student at Bukidnon State University." />
+    <title>Ian Carlo B. Quimbo | Developer Portfolio</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav page-width" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Ian Carlo B. Quimbo, back to top">ICQ<span>.</span></a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
+        </div>
+        <a class="nav-contact" href="#contact">Let's connect <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="intro-title">
+        <div class="hero-content page-width">
+          <h1 id="intro-title">Ian Carlo<br />B. Quimbo<span>.</span></h1>
+          <p class="hero-lead">Exploring ideas through code at Bukidnon State University.</p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#projects">Explore projects <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#about">More about me <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img class="hero-image" src="/images/workspace-hero.png" alt="A student developer's workspace with a laptop, notebook, and desk lamp" width="1672" height="941" fetchpriority="high" />
+        </div>
+      </section>
+
+      <div class="facts-band">
+        <div class="facts-inner page-width">
+          <div><span class="fact-label">Currently</span><strong>4th Year</strong></div>
+          <div><span class="fact-label">Studying</span><strong>BS Information Technology</strong></div>
+          <div><span class="fact-label">University</span><strong>Bukidnon State University</strong></div>
+          <div><span class="fact-label">Selected work</span><strong>04 Projects</strong></div>
+        </div>
+      </div>
+
+      <section class="section about-section page-width" id="about" aria-labelledby="about-title">
+        <div class="section-label reveal"><span>About me</span></div>
+        <div class="about-body reveal">
+          <h2 id="about-title">Curious by nature.<br /><em>Building <span class="inline-image" aria-hidden="true"></span> with purpose.</em></h2>
+          <p>I'm Ian, a 4th Year Bachelor of Science in Information Technology student at Bukidnon State University. My work spans web applications and an AI focused academic system. I enjoy turning ideas into things people can use.</p>
+          <div class="tech-block">
+            <h3>Technologies in my projects</h3>
+            <ul class="tech-list" aria-label="Technologies in my projects">
+              {technologies.map((technology) => <li>{technology}</li>)}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects-section" id="projects" aria-labelledby="projects-title">
+        <div class="page-width">
+          <div class="section-label section-label-light reveal"><span>Selected work</span></div>
+          <div class="projects-heading reveal">
+            <h2 id="projects-title">Projects<span>.</span></h2>
+            <p>Four projects, different technologies, one ongoing curiosity.</p>
+          </div>
+          <div class="project-toolbar reveal">
+            <div class="project-filters" role="group" aria-label="Filter projects by technology">
+              {filters.map((filter) => (
+                <button type="button" class="filter-button" data-filter={filter.value} aria-pressed={filter.value === "all" ? "true" : "false"}>{filter.label}</button>
+              ))}
+            </div>
+            <p class="project-count" id="project-count" aria-live="polite">Showing 04 projects</p>
+          </div>
+          <div class="project-grid" style="--visible-projects: 4">
+            {projects.map((project) => (
+              <article class="project-card reveal" data-category={project.category}>
+                <div class="project-card-top">
+                  <span class="project-number">{project.technologies[0]}</span>
+                  <span class="project-mark" aria-hidden="true">↗</span>
+                </div>
+                <div class="project-card-content">
+                  <h3>{project.name}</h3>
+                  <ul class="project-technologies" aria-label="Technologies used">
+                    {project.technologies.map((technology) => <li>{technology}</li>)}
+                  </ul>
+                </div>
+                <a class="project-link" href={project.repository} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.name} repository on GitHub (opens in a new tab)`}>View repository <span aria-hidden="true">↗</span></a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="certifications-section" id="certifications" aria-labelledby="certifications-title">
+        <div class="page-width">
+          <div class="section-label reveal"><span>Learning & events</span></div>
+          <div class="certifications-heading reveal">
+            <h2 id="certifications-title">Learning in motion<span>.</span></h2>
+            <p>Courses completed and events attended along the way.</p>
+          </div>
+          <div class="certificate-toolbar reveal">
+            <div class="certificate-filters" role="group" aria-label="Filter certificates">
+              <button type="button" class="certificate-filter" data-kind="all" aria-pressed="true">All</button>
+              <button type="button" class="certificate-filter" data-kind="course" aria-pressed="false">Courses</button>
+              <button type="button" class="certificate-filter" data-kind="event" aria-pressed="false">Events</button>
+            </div>
+            <p id="certificate-count" aria-live="polite">Showing 05 documents</p>
+            <div class="certificate-arrows" aria-label="Browse certificates">
+              <button type="button" id="certificate-scroll-prev" aria-label="Scroll certificates left">←</button>
+              <button type="button" id="certificate-scroll-next" aria-label="Scroll certificates right">→</button>
+            </div>
+          </div>
+          <div class="certificate-grid">
+            {certificates.map((certificate) => (
+              <article class="certificate-card reveal" data-kind={certificate.kind}>
+                <button
+                  type="button"
+                  class="certificate-preview"
+                  data-title={certificate.title}
+                  data-issuer={certificate.issuer}
+                  data-image={certificate.image}
+                  data-pdf={certificate.pdf}
+                  aria-label={`Preview ${certificate.title}`}
+                >
+                  <img src={certificate.image} alt="" loading="lazy" />
+                  <span>Preview certificate</span>
+                </button>
+                <div class="certificate-card-body">
+                  <div class="certificate-meta"><span>{certificate.type}</span><time>{certificate.date}</time></div>
+                  <h3>{certificate.title}</h3>
+                  <p>{certificate.detail}</p>
+                  <div class="certificate-card-bottom">
+                    <span>{certificate.issuer}</span>
+                    <a href={certificate.pdf} target="_blank" rel="noopener noreferrer" aria-label={`Open PDF for ${certificate.title} in a new tab`}>Open PDF ↗</a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <dialog class="certificate-dialog" id="certificate-dialog" aria-labelledby="preview-title">
+        <div class="dialog-top"><span>Certificate preview</span><button type="button" id="close-preview">Close</button></div>
+        <div class="dialog-image-wrap"><img id="preview-image" src="" alt="" /></div>
+        <div class="dialog-bottom">
+          <div><h3 id="preview-title"></h3><p id="preview-issuer"></p></div>
+          <a id="preview-pdf" href="" target="_blank" rel="noopener noreferrer">Open PDF ↗</a>
+        </div>
+        <div class="dialog-navigation">
+          <button type="button" id="previous-certificate">Previous</button>
+          <span id="preview-position"></span>
+          <button type="button" id="next-certificate">Next</button>
+        </div>
+      </dialog>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="page-width contact-inner reveal">
+          <div>
+            <p class="contact-kicker">Have something in mind?</p>
+            <h2 id="contact-title">Let's make<br />something <em>work.</em></h2>
+            <p class="contact-name">Ian Carlo B. Quimbo</p>
+          </div>
+          <div class="contact-details">
+            <a class="contact-email" href="mailto:ian.quimbo2004@gmail.com">ian.quimbo2004@gmail.com <span aria-hidden="true">↗</span></a>
+            <a class="contact-phone" href="tel:+639161453803">+63 916 145 3803 <span aria-hidden="true">↗</span></a>
+            <button class="copy-button" type="button" id="copy-email">Copy email address</button>
+            <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-width footer-inner">
+        <span>Ian Carlo B. Quimbo</span>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <script>
+      import gsap from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+      const filterButtons = document.querySelectorAll<HTMLButtonElement>(".filter-button");
+      const projectCards = document.querySelectorAll<HTMLElement>(".project-card");
+      const projectGrid = document.querySelector<HTMLElement>(".project-grid");
+      const projectCount = document.querySelector<HTMLElement>("#project-count");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const selected = button.dataset.filter;
+          let visible = 0;
+          filterButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+          projectCards.forEach((card) => {
+            const show = selected === "all" || card.dataset.category === selected;
+            card.hidden = !show;
+            if (show) visible += 1;
+          });
+          if (projectCount) {
+            projectCount.textContent = `Showing ${String(visible).padStart(2, "0")} ${visible === 1 ? "project" : "projects"}`;
+          }
+          projectGrid?.style.setProperty("--visible-projects", String(visible));
+          if (projectGrid) projectGrid.dataset.visible = String(visible);
+          ScrollTrigger.refresh();
+        });
+      });
+
+      const certificateFilters = document.querySelectorAll<HTMLButtonElement>(".certificate-filter");
+      const certificateCards = document.querySelectorAll<HTMLElement>(".certificate-card");
+      const certificateGrid = document.querySelector<HTMLElement>(".certificate-grid");
+      const certificateCount = document.querySelector<HTMLElement>("#certificate-count");
+      const certificateDialog = document.querySelector<HTMLDialogElement>("#certificate-dialog");
+      const previewButtons = document.querySelectorAll<HTMLButtonElement>(".certificate-preview");
+      const previewImage = document.querySelector<HTMLImageElement>("#preview-image");
+      const previewTitle = document.querySelector<HTMLElement>("#preview-title");
+      const previewIssuer = document.querySelector<HTMLElement>("#preview-issuer");
+      const previewPdf = document.querySelector<HTMLAnchorElement>("#preview-pdf");
+      const previewPosition = document.querySelector<HTMLElement>("#preview-position");
+      let activePreviews: HTMLButtonElement[] = [];
+      let previewIndex = 0;
+
+      certificateFilters.forEach((button) => {
+        button.addEventListener("click", () => {
+          const selected = button.dataset.kind;
+          let visible = 0;
+          certificateFilters.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+          certificateCards.forEach((card) => {
+            const show = selected === "all" || card.dataset.kind === selected;
+            card.hidden = !show;
+            if (show) visible += 1;
+          });
+          if (certificateCount) certificateCount.textContent = `Showing ${String(visible).padStart(2, "0")} documents`;
+          certificateGrid?.scrollTo({ left: 0, behavior: "smooth" });
+          ScrollTrigger.refresh();
+        });
+      });
+
+      document.querySelector("#certificate-scroll-prev")?.addEventListener("click", () => {
+        certificateGrid?.scrollBy({ left: -(certificateGrid.clientWidth * 0.78), behavior: "smooth" });
+      });
+      document.querySelector("#certificate-scroll-next")?.addEventListener("click", () => {
+        certificateGrid?.scrollBy({ left: certificateGrid.clientWidth * 0.78, behavior: "smooth" });
+      });
+
+      function showCertificate(index: number) {
+        const button = activePreviews[index];
+        if (!button || !previewImage || !previewTitle || !previewIssuer || !previewPdf || !previewPosition) return;
+        previewIndex = index;
+        previewImage.src = button.dataset.image || "";
+        previewImage.alt = button.dataset.title || "Certificate";
+        previewTitle.textContent = button.dataset.title || "";
+        previewIssuer.textContent = button.dataset.issuer || "";
+        previewPdf.href = button.dataset.pdf || "";
+        previewPosition.textContent = `${index + 1} / ${activePreviews.length}`;
+      }
+
+      previewButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          activePreviews = Array.from(previewButtons).filter((item) => !item.closest<HTMLElement>(".certificate-card")?.hidden);
+          showCertificate(activePreviews.indexOf(button));
+          certificateDialog?.showModal();
+        });
+      });
+      document.querySelector("#close-preview")?.addEventListener("click", () => certificateDialog?.close());
+      document.querySelector("#previous-certificate")?.addEventListener("click", () => showCertificate((previewIndex - 1 + activePreviews.length) % activePreviews.length));
+      document.querySelector("#next-certificate")?.addEventListener("click", () => showCertificate((previewIndex + 1) % activePreviews.length));
+      certificateDialog?.addEventListener("click", (event) => {
+        if (event.target === certificateDialog) certificateDialog.close();
+      });
+
+      const copyButton = document.querySelector<HTMLButtonElement>("#copy-email");
+      const copyStatus = document.querySelector<HTMLElement>("#copy-status");
+      copyButton?.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText("ian.quimbo2004@gmail.com");
+          if (copyStatus) copyStatus.textContent = "Email copied";
+        } catch {
+          if (copyStatus) copyStatus.textContent = "Could not copy email";
+        }
+      });
+
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if ("IntersectionObserver" in window && !reduceMotion) {
+        document.documentElement.classList.add("motion-ready");
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+        document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+      }
+
+      if (!reduceMotion) {
+        gsap.registerPlugin(ScrollTrigger);
+        const desktop = gsap.matchMedia();
+        desktop.add("(min-width: 901px)", () => {
+          ScrollTrigger.create({
+            trigger: ".projects-section",
+            start: "top top",
+            end: "bottom bottom",
+            pin: ".projects-heading",
+            pinSpacing: false
+          });
+        });
+        gsap.utils.toArray<HTMLElement>(".project-card").forEach((card, index) => {
+          gsap.fromTo(card, { y: 55, scale: 0.94 }, {
+            y: 0, scale: 1, ease: "none",
+            scrollTrigger: { trigger: card, start: "top 96%", end: "top 63%", scrub: 1 }
+          });
+          card.style.zIndex = String(index + 1);
+        });
+      }
+    </script>
+  </body>
+</html>
